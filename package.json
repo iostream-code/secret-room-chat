@@ -1,0 +1,20 @@
+{
+  "name": "secret-room-chat",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ephemeral anonymous chat rooms over WebSocket — no accounts, no message persistence.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1",
+    "helmet": "^8.0.0",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^7.4.1",
+    "nanoid": "^5.0.9"
+  }
+}

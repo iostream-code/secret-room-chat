@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secret Room — Chat Rahasia Ephemeral</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section id="view-landing" class="view">
+        <h1>🔒 Secret Room</h1>
+        <p class="subtitle">
+          Chat tanpa akun, tanpa jejak. Room otomatis hilang kalau sudah tidak dipakai.
+        </p>
+
+        <div class="card">
+          <h2>Buat room baru</h2>
+          <button id="btn-create">Buat Room</button>
+        </div>
+
+        <div class="card">
+          <h2>Gabung room</h2>
+          <input id="input-nickname" type="text" placeholder="Nama (opsional)" maxlength="24" />
+          <input id="input-code" type="text" placeholder="Kode room" maxlength="6" autocapitalize="characters" />
+          <button id="btn-join">Gabung</button>
+        </div>
+
+        <p id="landing-error" class="error" hidden></p>
+      </section>
+
+      <section id="view-room" class="view" hidden>
+        <header class="room-header">
+          <div>
+            <span class="room-code" id="room-code"></span>
+            <button id="btn-copy-code" title="Salin kode room">⧉</button>
+          </div>
+          <span id="member-count">0 online</span>
+          <button id="btn-leave">Keluar</button>
+        </header>
+
+        <ul id="message-list" class="message-list"></ul>
+        <p id="typing-indicator" class="typing-indicator" hidden></p>
+
+        <form id="form-message" class="message-form">
+          <input id="input-message" type="text" placeholder="Tulis pesan..." maxlength="2000" autocomplete="off" />
+          <button type="submit">Kirim</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
